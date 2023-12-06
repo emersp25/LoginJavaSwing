@@ -16,6 +16,7 @@ public class user extends javax.swing.JFrame {
      */
     public user() {
         initComponents();
+        this.setLocationRelativeTo(this);
     }
 
     /**
@@ -36,6 +37,7 @@ public class user extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("USTED ES UN PINCHE USER");
 
         jButton1.setText("BACK");
