@@ -13,8 +13,6 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
     
-    String nombre = "admin";
-    String contra = "admin";
     int cont = 0;
 
     /**
@@ -61,7 +59,7 @@ public class Login extends javax.swing.JFrame {
 
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("LOGIN");
-        loginBtn.setContentAreaFilled(false);
+        loginBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBtnActionPerformed(evt);
@@ -124,21 +122,23 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         //Logica de logueado
-        while (cont<=2){
+        while (cont <= 3) {
             cont++;
-            if(userTxt.getText().equals(nombre) && passTxt.getText().equals(contra)){
-            new admin().setVisible(true);
-            this.dispose();
+            if (userTxt.getText().equals("admin") && passTxt.getText().equals("admin")) {
+                new admin().setVisible(true);
+                this.dispose();
+            } else if (userTxt.getText().equals("usuario") && passTxt.getText().equals("usuario")) {
+                new user().setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Escriba bien el usuario o contraseña, pendejo");
-                
-                if (cont==3){
-                this.dispose();
+                if (cont == 3) {
+                    this.dispose();
                 }
             }
             break;
         }
-        
+
     }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
